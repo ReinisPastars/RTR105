@@ -18,4 +18,13 @@ cd - nomainīt direktoriju;
 rkdir - jauna mape;
 rmdir - dzēst mapi;
 history - vēsture;
-clear vai ctrl+l - nodzēst lapu.
+clear vai ctrl+l - nodzēst lapu;
+touch "nosaukums" - izveidot tukšu teksta dokumentu;
+cat "nosaukums" - apskatīt dokumenta saturu;
+nano "nosaukums" - atvērt teksta editoru;
+cp - kopēt mapes/dokumenta saturu uz citu atrašanās vietu;
+mv - pārvietot mapes/dokumenta saturu uz citu atrašanās vietu;
+mkdir "nosaukums" - jauna mape;
+"komanda" *"atslēga" - *norāda uz saīsinājumu
+man - informācija
+$PATH - sistēmas mainīgais kurš satur sevī sistēmas ceļus.
