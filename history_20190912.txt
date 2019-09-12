@@ -63,7 +63,6 @@
    63  exit
    64  pwd
    65  whoami
-   66  lohs
    67  L
    68  pwd
    69  cd /
