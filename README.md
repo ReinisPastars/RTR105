@@ -25,6 +25,14 @@ nano "nosaukums" - atvērt teksta editoru;
 cp - kopēt mapes/dokumenta saturu uz citu atrašanās vietu;
 mv - pārvietot mapes/dokumenta saturu uz citu atrašanās vietu;
 mkdir "nosaukums" - jauna mape;
-"komanda" *"atslēga" - *norāda uz saīsinājumu
-man - informācija
-$PATH - sistēmas mainīgais kurš satur sevī sistēmas ceļus.
+"komanda" *"atslēga" - *norāda uz saīsinājumu;
+man - informācija;
+$PATH - sistēmas mainīgais kurš satur sevī sistēmas ceļus;
+gcc "nosaukums" - kompilēšana;
+git clone "links" - atver pieejamos failus github;
+./git upload "nosaukums" - saglabā failu github;
+git push origin master - 
+
+obligātā rindiņa : main(){}
+pievieno komentārus //
+
