@@ -4,7 +4,7 @@
 int main(){
  //mainīgie
  char input[256];
- int x, y, tmp, length, min_v=0, max_v=256, vid_v, medi, vertiba, kop_s=0, max=0;
+ int x, y, tmp, length, min_v=256, max_v=0, vid_v, medi, vertiba, kop_s=0, max=0;
 
  //simbolu rinda
  printf("\n\nLūdzu ievadiet simbolu rindu, ar ne vairāk kā 256 rakstzīmēm:\n");
@@ -28,8 +28,8 @@ int main(){
  //vidējā vērtība
  for(x=0;length>x;x++){
  vertiba = (int)input[x];
- if (min_v<vertiba) max_v=vertiba;
- if (max_v>vertiba && vertiba>32) min_v = vertiba;
+ if (max_v<vertiba) max_v=vertiba;
+ if (min_v>vertiba && vertiba>32) min_v = vertiba;
  kop_s=kop_s+vertiba;
  }
 
