@@ -15,11 +15,11 @@ void main() {
  printf("\t\t------\n");
  printf("\t\t  k=0\n");
 
- printf("Lūdzu ievadiet izvēlēto x vērtību kurai velaties iegūt bessel0 vērtību:\n");
+ printf("Ievadiet izvēlēto x vērtību kurai vēlaties iegūt bessel vērtību:\n");
  scanf("%Lg",&x);
 
  y = j0(x);
- printf("y=bessel0(%Lg)=%Lg\n",x,y);
+ printf("y=bessel(%Lg)=%Lg\n",x,y);
  a = x;
  S = a;
 

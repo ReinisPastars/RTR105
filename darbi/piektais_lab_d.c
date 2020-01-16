@@ -75,6 +75,6 @@ y=0;
  printf("Garums %d \t %c \t %d  \n", x, input[x], input[x] );
  }
 
- printf(" \n\n", length);
+ printf(" \n", length);
  return 0;
 }
