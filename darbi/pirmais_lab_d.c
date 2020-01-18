@@ -2,14 +2,14 @@
 #include <math.h>
 
 void main() {
- long double x=0, y, a, S;
+ long double x=0, y=0, a=0, S=0;
  int k=0;
 
  printf("\n\t\t 500\n");
  printf("\t\t------\n");
  printf("\t\t\\               k  2*k    \n");
  printf("\t\t \\          (-1) *x       \n");
- printf("\ty(x)=\t  |   -----------------   = sinh(x/2)\n");
+ printf("\ty(x)=\t  |   -----------------   = bessel0\n");
  printf("\t\t /              2  k      \n");
  printf("\t\t/           (k!) *4       \n");
  printf("\t\t------\n");
@@ -20,16 +20,16 @@ void main() {
 
  y = j0(x);
  printf("y=bessel(%Lg)=%Lg\n",x,y);
- a = x;
+ a = 1;
  S = a;
 
-while(k<20){
+while(k<501){
  k++;
- a = a *pow(-x,2) /(k*4);
+ a = a *(-1)*pow(x,2) /(4*pow(k,2));
  S= S+a;
-// if (k==500||k==499){
-  printf("%d.\t X=%.5Lg\t\ta=%.5Lg\t\tS= %Lg\n", k, x, a, S);
-//  }
+ if (k==500||k==499){
+  printf("%d.\t X=%.5Lg\ta=%.5Lg\tS= %Lg\n", k, x, a, S);
+  }
  }
 }
 
