@@ -26,12 +26,12 @@ void main() {
 
  y = j0(x);
  printf("y=bessel(%Lg)=%Lg\n",x,y);
- a = x;
+ a = 1;
  S = a;
 
 while(k<20){
  k++;
- a = a *pow(-x,2) /(k*4);
+ a = a *pow(-x,2) /(4*pow(k,2));
  S= S+a;
  if (k==500||k==499){
   printf("%d.\t X=%.5Lg\t\ta=%.5Lg\t\tS= %Lg\n", k, x, a, S);
