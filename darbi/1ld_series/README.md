@@ -1,7 +1,8 @@
 # 1.laboratorijas darba - Teilora rindas - atskaite
 
 ## Teorija
-Dod iespēju ērtāk aprēķināt funkcijas vērtību izmantojot rekurences reizinātāju, un arī 
+Teilora rindas dod iespēju ērtāk aprēķināt funkcijas vērtību izmantojot rekurences reizinātāju,
+un arī atļauj datoram aprēķināt sarežģītas funkcijas. 
 
 ### Kods
 #include <stdio.h>
@@ -70,3 +71,4 @@ rekurences reizinātājs: -----------------
 Kods darbojas kā plānots, vienīgi varētu uzlabot tā izskatu, un papildināt kodu tā, lai rezultāts izskatītos
 smukāk un pārskatāmāk
 ### Bildes
+![Beseļa funkcijas attēlojums](https://github.com/ReinisPastars/RTR105/blob/master/darbi/1ld_series/bessel.png?raw=true)
