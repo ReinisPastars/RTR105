@@ -1,7 +1,7 @@
 # 1.laboratorijas darba - Teilora rindas - atskaite
 
 ## Teorija
-Dod iespēju ērtāk aprēķināt funkcijas vērtību izmantojot rekurences reizinātāju.
+Dod iespēju ērtāk aprēķināt funkcijas vērtību izmantojot rekurences reizinātāju, un arī 
 
 ### Kods
 #include <stdio.h>
@@ -29,7 +29,7 @@ void main() {
  a = 1;
  S = x;
 
-while(k<20){
+while(k<501){
  k++;
  a = a *(-1)*pow(x,2) /(4*pow(k,2));
  S= S+a;
@@ -70,4 +70,3 @@ rekurences reizinātājs: -----------------
 Kods darbojas kā plānots, vienīgi varētu uzlabot tā izskatu, un papildināt kodu tā, lai rezultāts izskatītos
 smukāk un pārskatāmāk
 ### Bildes
-
