@@ -36,7 +36,7 @@ int main() {
   a = x;
   else
   b = x;
-  printf("sin(%7.3f)=%7.3f\tsin(%7.3f)=%7.3f\tsin(%7.3f)=%7.3f\n",a,j0(x)-c,x,j0(x)-c,b, j0(x)-c);
+  printf("j0(%7.3f)=%7.3f\tj0(%7.3f)=%7.3f\tj0(%7.3f)=%7.3f\n",a,j0(x)-c,x,j0(x)-c,b, j0(x)-c);
   i++;
  }
 
