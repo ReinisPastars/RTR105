@@ -31,9 +31,8 @@ int main() {
   a = x;
   else
   b = x;
-  printf("(j0(%7.3f) - %7.3f =%7.3f\t",a,a,c,funkc_a);
-  printf("(j0(%7.3f) - %7.3f =%7.3f\t",b,b,c,funkc_b);
-  printf("(j0(%7.3f) - %7.3f =%7.3f\n\n",x,x,c,j0(x)-c);
+printf("sin(%7.3f)=%7.3f\tsin(%7.3f)=%7.3f\tsin(%7.3f)=%7.3f\n",a,j0(x)-c,x,j0(x)-c,b, j0(x)-c);
+
   i++;
  }
 
