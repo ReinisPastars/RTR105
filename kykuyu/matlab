@@ -1,0 +1,647 @@
+>> mkdir lab0
+>> cd lab0/
+>> a = 1
+
+a =
+
+     1
+
+>> b=2
+
+b =
+
+     2
+
+>> c = a+b
+
+c =
+
+     3
+
+>> A = [1 2; 3 4]
+
+A =
+
+     1     2
+     3     4
+
+>> B = [3 4; 5 6] 
+
+B =
+
+     3     4
+     5     6
+
+>> C = A*B
+
+C =
+
+    13    16
+    29    36
+
+>> C = A.*B
+
+C =
+
+     3     8
+    15    24
+
+>> %Uzzīmēsim 2.kārtas polinomu
+>> y = a*x^2+b*x+c
+Undefined function or variable 'x'.
+ 
+>> %y = a*x^2+b*x+c
+>> %polinoma koeficientus a,b,c
+>> %saglabāsim vektorā C
+>> C = [2 3 4]
+
+C =
+
+     2     3     4
+
+>> %definē x
+>> x = -6:2:6;
+>> %sākuma elements:solis:beigu elements
+>> y = a*x^2+b*x+c
+Error using  ^ 
+Incorrect dimensions for raising a matrix to a power. Check that the matrix is square and the power is a scalar. To perform
+elementwise matrix powers, use '.^'.
+ 
+>> y = C(1)*x^2+C(2)*x+C(3)
+Error using  ^ 
+Incorrect dimensions for raising a matrix to a power. Check that the matrix is square and the power is a scalar. To perform
+elementwise matrix powers, use '.^'.
+ 
+>> 
+>> y = C(1)*x.^2+C(2)*x.+C(3)
+ y = C(1)*x.^2+C(2)*x.+C(3)
+                      ↑
+Error: Invalid use of operator.
+ 
+>> y = C(1)*x.^2+C(2)*x+C(3)
+
+y =
+
+    58    24     6     4    18    48    94
+
+>> %zīmē grafiku
+>> %zīmē ar plot
+>> %sintakse : plot (x,y)
+>> plot (x,y)
+>> %ko darīt lai nebūtu lauzta līnija
+>> %jāsamazina solis 
+>> x2 = -6:0.01:6;
+>> y2 = C(1)*x2.^2+C(2)*x2+C(3)
+
+y2 =
+
+  Columns 1 through 12
+
+   58.0000   57.7902   57.5808   57.3718   57.1632   56.9550   56.7472   56.5398   56.3328   56.1262   55.9200   55.7142
+
+  Columns 13 through 24
+
+   55.5088   55.3038   55.0992   54.8950   54.6912   54.4878   54.2848   54.0822   53.8800   53.6782   53.4768   53.2758
+
+  Columns 25 through 36
+
+   53.0752   52.8750   52.6752   52.4758   52.2768   52.0782   51.8800   51.6822   51.4848   51.2878   51.0912   50.8950
+
+  Columns 37 through 48
+
+   50.6992   50.5038   50.3088   50.1142   49.9200   49.7262   49.5328   49.3398   49.1472   48.9550   48.7632   48.5718
+
+  Columns 49 through 60
+
+   48.3808   48.1902   48.0000   47.8102   47.6208   47.4318   47.2432   47.0550   46.8672   46.6798   46.4928   46.3062
+
+  Columns 61 through 72
+
+   46.1200   45.9342   45.7488   45.5638   45.3792   45.1950   45.0112   44.8278   44.6448   44.4622   44.2800   44.0982
+
+  Columns 73 through 84
+
+   43.9168   43.7358   43.5552   43.3750   43.1952   43.0158   42.8368   42.6582   42.4800   42.3022   42.1248   41.9478
+
+  Columns 85 through 96
+
+   41.7712   41.5950   41.4192   41.2438   41.0688   40.8942   40.7200   40.5462   40.3728   40.1998   40.0272   39.8550
+
+  Columns 97 through 108
+
+   39.6832   39.5118   39.3408   39.1702   39.0000   38.8302   38.6608   38.4918   38.3232   38.1550   37.9872   37.8198
+
+  Columns 109 through 120
+
+   37.6528   37.4862   37.3200   37.1542   36.9888   36.8238   36.6592   36.4950   36.3312   36.1678   36.0048   35.8422
+
+  Columns 121 through 132
+
+   35.6800   35.5182   35.3568   35.1958   35.0352   34.8750   34.7152   34.5558   34.3968   34.2382   34.0800   33.9222
+
+  Columns 133 through 144
+
+   33.7648   33.6078   33.4512   33.2950   33.1392   32.9838   32.8288   32.6742   32.5200   32.3662   32.2128   32.0598
+
+  Columns 145 through 156
+
+   31.9072   31.7550   31.6032   31.4518   31.3008   31.1502   31.0000   30.8502   30.7008   30.5518   30.4032   30.2550
+
+  Columns 157 through 168
+
+   30.1072   29.9598   29.8128   29.6662   29.5200   29.3742   29.2288   29.0838   28.9392   28.7950   28.6512   28.5078
+
+  Columns 169 through 180
+
+   28.3648   28.2222   28.0800   27.9382   27.7968   27.6558   27.5152   27.3750   27.2352   27.0958   26.9568   26.8182
+
+  Columns 181 through 192
+
+   26.6800   26.5422   26.4048   26.2678   26.1312   25.9950   25.8592   25.7238   25.5888   25.4542   25.3200   25.1862
+
+  Columns 193 through 204
+
+   25.0528   24.9198   24.7872   24.6550   24.5232   24.3918   24.2608   24.1302   24.0000   23.8702   23.7408   23.6118
+
+  Columns 205 through 216
+
+   23.4832   23.3550   23.2272   23.0998   22.9728   22.8462   22.7200   22.5942   22.4688   22.3438   22.2192   22.0950
+
+  Columns 217 through 228
+
+   21.9712   21.8478   21.7248   21.6022   21.4800   21.3582   21.2368   21.1158   20.9952   20.8750   20.7552   20.6358
+
+  Columns 229 through 240
+
+   20.5168   20.3982   20.2800   20.1622   20.0448   19.9278   19.8112   19.6950   19.5792   19.4638   19.3488   19.2342
+
+  Columns 241 through 252
+
+   19.1200   19.0062   18.8928   18.7798   18.6672   18.5550   18.4432   18.3318   18.2208   18.1102   18.0000   17.8902
+
+  Columns 253 through 264
+
+   17.7808   17.6718   17.5632   17.4550   17.3472   17.2398   17.1328   17.0262   16.9200   16.8142   16.7088   16.6038
+
+  Columns 265 through 276
+
+   16.4992   16.3950   16.2912   16.1878   16.0848   15.9822   15.8800   15.7782   15.6768   15.5758   15.4752   15.3750
+
+  Columns 277 through 288
+
+   15.2752   15.1758   15.0768   14.9782   14.8800   14.7822   14.6848   14.5878   14.4912   14.3950   14.2992   14.2038
+
+  Columns 289 through 300
+
+   14.1088   14.0142   13.9200   13.8262   13.7328   13.6398   13.5472   13.4550   13.3632   13.2718   13.1808   13.0902
+
+  Columns 301 through 312
+
+   13.0000   12.9102   12.8208   12.7318   12.6432   12.5550   12.4672   12.3798   12.2928   12.2062   12.1200   12.0342
+
+  Columns 313 through 324
+
+   11.9488   11.8638   11.7792   11.6950   11.6112   11.5278   11.4448   11.3622   11.2800   11.1982   11.1168   11.0358
+
+  Columns 325 through 336
+
+   10.9552   10.8750   10.7952   10.7158   10.6368   10.5582   10.4800   10.4022   10.3248   10.2478   10.1712   10.0950
+
+  Columns 337 through 348
+
+   10.0192    9.9438    9.8688    9.7942    9.7200    9.6462    9.5728    9.4998    9.4272    9.3550    9.2832    9.2118
+
+  Columns 349 through 360
+
+    9.1408    9.0702    9.0000    8.9302    8.8608    8.7918    8.7232    8.6550    8.5872    8.5198    8.4528    8.3862
+
+  Columns 361 through 372
+
+    8.3200    8.2542    8.1888    8.1238    8.0592    7.9950    7.9312    7.8678    7.8048    7.7422    7.6800    7.6182
+
+  Columns 373 through 384
+
+    7.5568    7.4958    7.4352    7.3750    7.3152    7.2558    7.1968    7.1382    7.0800    7.0222    6.9648    6.9078
+
+  Columns 385 through 396
+
+    6.8512    6.7950    6.7392    6.6838    6.6288    6.5742    6.5200    6.4662    6.4128    6.3598    6.3072    6.2550
+
+  Columns 397 through 408
+
+    6.2032    6.1518    6.1008    6.0502    6.0000    5.9502    5.9008    5.8518    5.8032    5.7550    5.7072    5.6598
+
+  Columns 409 through 420
+
+    5.6128    5.5662    5.5200    5.4742    5.4288    5.3838    5.3392    5.2950    5.2512    5.2078    5.1648    5.1222
+
+  Columns 421 through 432
+
+    5.0800    5.0382    4.9968    4.9558    4.9152    4.8750    4.8352    4.7958    4.7568    4.7182    4.6800    4.6422
+
+  Columns 433 through 444
+
+    4.6048    4.5678    4.5312    4.4950    4.4592    4.4238    4.3888    4.3542    4.3200    4.2862    4.2528    4.2198
+
+  Columns 445 through 456
+
+    4.1872    4.1550    4.1232    4.0918    4.0608    4.0302    4.0000    3.9702    3.9408    3.9118    3.8832    3.8550
+
+  Columns 457 through 468
+
+    3.8272    3.7998    3.7728    3.7462    3.7200    3.6942    3.6688    3.6438    3.6192    3.5950    3.5712    3.5478
+
+  Columns 469 through 480
+
+    3.5248    3.5022    3.4800    3.4582    3.4368    3.4158    3.3952    3.3750    3.3552    3.3358    3.3168    3.2982
+
+  Columns 481 through 492
+
+    3.2800    3.2622    3.2448    3.2278    3.2112    3.1950    3.1792    3.1638    3.1488    3.1342    3.1200    3.1062
+
+  Columns 493 through 504
+
+    3.0928    3.0798    3.0672    3.0550    3.0432    3.0318    3.0208    3.0102    3.0000    2.9902    2.9808    2.9718
+
+  Columns 505 through 516
+
+    2.9632    2.9550    2.9472    2.9398    2.9328    2.9262    2.9200    2.9142    2.9088    2.9038    2.8992    2.8950
+
+  Columns 517 through 528
+
+    2.8912    2.8878    2.8848    2.8822    2.8800    2.8782    2.8768    2.8758    2.8752    2.8750    2.8752    2.8758
+
+  Columns 529 through 540
+
+    2.8768    2.8782    2.8800    2.8822    2.8848    2.8878    2.8912    2.8950    2.8992    2.9038    2.9088    2.9142
+
+  Columns 541 through 552
+
+    2.9200    2.9262    2.9328    2.9398    2.9472    2.9550    2.9632    2.9718    2.9808    2.9902    3.0000    3.0102
+
+  Columns 553 through 564
+
+    3.0208    3.0318    3.0432    3.0550    3.0672    3.0798    3.0928    3.1062    3.1200    3.1342    3.1488    3.1638
+
+  Columns 565 through 576
+
+    3.1792    3.1950    3.2112    3.2278    3.2448    3.2622    3.2800    3.2982    3.3168    3.3358    3.3552    3.3750
+
+  Columns 577 through 588
+
+    3.3952    3.4158    3.4368    3.4582    3.4800    3.5022    3.5248    3.5478    3.5712    3.5950    3.6192    3.6438
+
+  Columns 589 through 600
+
+    3.6688    3.6942    3.7200    3.7462    3.7728    3.7998    3.8272    3.8550    3.8832    3.9118    3.9408    3.9702
+
+  Columns 601 through 612
+
+    4.0000    4.0302    4.0608    4.0918    4.1232    4.1550    4.1872    4.2198    4.2528    4.2862    4.3200    4.3542
+
+  Columns 613 through 624
+
+    4.3888    4.4238    4.4592    4.4950    4.5312    4.5678    4.6048    4.6422    4.6800    4.7182    4.7568    4.7958
+
+  Columns 625 through 636
+
+    4.8352    4.8750    4.9152    4.9558    4.9968    5.0382    5.0800    5.1222    5.1648    5.2078    5.2512    5.2950
+
+  Columns 637 through 648
+
+    5.3392    5.3838    5.4288    5.4742    5.5200    5.5662    5.6128    5.6598    5.7072    5.7550    5.8032    5.8518
+
+  Columns 649 through 660
+
+    5.9008    5.9502    6.0000    6.0502    6.1008    6.1518    6.2032    6.2550    6.3072    6.3598    6.4128    6.4662
+
+  Columns 661 through 672
+
+    6.5200    6.5742    6.6288    6.6838    6.7392    6.7950    6.8512    6.9078    6.9648    7.0222    7.0800    7.1382
+
+  Columns 673 through 684
+
+    7.1968    7.2558    7.3152    7.3750    7.4352    7.4958    7.5568    7.6182    7.6800    7.7422    7.8048    7.8678
+
+  Columns 685 through 696
+
+    7.9312    7.9950    8.0592    8.1238    8.1888    8.2542    8.3200    8.3862    8.4528    8.5198    8.5872    8.6550
+
+  Columns 697 through 708
+
+    8.7232    8.7918    8.8608    8.9302    9.0000    9.0702    9.1408    9.2118    9.2832    9.3550    9.4272    9.4998
+
+  Columns 709 through 720
+
+    9.5728    9.6462    9.7200    9.7942    9.8688    9.9438   10.0192   10.0950   10.1712   10.2478   10.3248   10.4022
+
+  Columns 721 through 732
+
+   10.4800   10.5582   10.6368   10.7158   10.7952   10.8750   10.9552   11.0358   11.1168   11.1982   11.2800   11.3622
+
+  Columns 733 through 744
+
+   11.4448   11.5278   11.6112   11.6950   11.7792   11.8638   11.9488   12.0342   12.1200   12.2062   12.2928   12.3798
+
+  Columns 745 through 756
+
+   12.4672   12.5550   12.6432   12.7318   12.8208   12.9102   13.0000   13.0902   13.1808   13.2718   13.3632   13.4550
+
+  Columns 757 through 768
+
+   13.5472   13.6398   13.7328   13.8262   13.9200   14.0142   14.1088   14.2038   14.2992   14.3950   14.4912   14.5878
+
+  Columns 769 through 780
+
+   14.6848   14.7822   14.8800   14.9782   15.0768   15.1758   15.2752   15.3750   15.4752   15.5758   15.6768   15.7782
+
+  Columns 781 through 792
+
+   15.8800   15.9822   16.0848   16.1878   16.2912   16.3950   16.4992   16.6038   16.7088   16.8142   16.9200   17.0262
+
+  Columns 793 through 804
+
+   17.1328   17.2398   17.3472   17.4550   17.5632   17.6718   17.7808   17.8902   18.0000   18.1102   18.2208   18.3318
+
+  Columns 805 through 816
+
+   18.4432   18.5550   18.6672   18.7798   18.8928   19.0062   19.1200   19.2342   19.3488   19.4638   19.5792   19.6950
+
+  Columns 817 through 828
+
+   19.8112   19.9278   20.0448   20.1622   20.2800   20.3982   20.5168   20.6358   20.7552   20.8750   20.9952   21.1158
+
+  Columns 829 through 840
+
+   21.2368   21.3582   21.4800   21.6022   21.7248   21.8478   21.9712   22.0950   22.2192   22.3438   22.4688   22.5942
+
+  Columns 841 through 852
+
+   22.7200   22.8462   22.9728   23.0998   23.2272   23.3550   23.4832   23.6118   23.7408   23.8702   24.0000   24.1302
+
+  Columns 853 through 864
+
+   24.2608   24.3918   24.5232   24.6550   24.7872   24.9198   25.0528   25.1862   25.3200   25.4542   25.5888   25.7238
+
+  Columns 865 through 876
+
+   25.8592   25.9950   26.1312   26.2678   26.4048   26.5422   26.6800   26.8182   26.9568   27.0958   27.2352   27.3750
+
+  Columns 877 through 888
+
+   27.5152   27.6558   27.7968   27.9382   28.0800   28.2222   28.3648   28.5078   28.6512   28.7950   28.9392   29.0838
+
+  Columns 889 through 900
+
+   29.2288   29.3742   29.5200   29.6662   29.8128   29.9598   30.1072   30.2550   30.4032   30.5518   30.7008   30.8502
+
+  Columns 901 through 912
+
+   31.0000   31.1502   31.3008   31.4518   31.6032   31.7550   31.9072   32.0598   32.2128   32.3662   32.5200   32.6742
+
+  Columns 913 through 924
+
+   32.8288   32.9838   33.1392   33.2950   33.4512   33.6078   33.7648   33.9222   34.0800   34.2382   34.3968   34.5558
+
+  Columns 925 through 936
+
+   34.7152   34.8750   35.0352   35.1958   35.3568   35.5182   35.6800   35.8422   36.0048   36.1678   36.3312   36.4950
+
+  Columns 937 through 948
+
+   36.6592   36.8238   36.9888   37.1542   37.3200   37.4862   37.6528   37.8198   37.9872   38.1550   38.3232   38.4918
+
+  Columns 949 through 960
+
+   38.6608   38.8302   39.0000   39.1702   39.3408   39.5118   39.6832   39.8550   40.0272   40.1998   40.3728   40.5462
+
+  Columns 961 through 972
+
+   40.7200   40.8942   41.0688   41.2438   41.4192   41.5950   41.7712   41.9478   42.1248   42.3022   42.4800   42.6582
+
+  Columns 973 through 984
+
+   42.8368   43.0158   43.1952   43.3750   43.5552   43.7358   43.9168   44.0982   44.2800   44.4622   44.6448   44.8278
+
+  Columns 985 through 996
+
+   45.0112   45.1950   45.3792   45.5638   45.7488   45.9342   46.1200   46.3062   46.4928   46.6798   46.8672   47.0550
+
+  Columns 997 through 1008
+
+   47.2432   47.4318   47.6208   47.8102   48.0000   48.1902   48.3808   48.5718   48.7632   48.9550   49.1472   49.3398
+
+  Columns 1009 through 1020
+
+   49.5328   49.7262   49.9200   50.1142   50.3088   50.5038   50.6992   50.8950   51.0912   51.2878   51.4848   51.6822
+
+  Columns 1021 through 1032
+
+   51.8800   52.0782   52.2768   52.4758   52.6752   52.8750   53.0752   53.2758   53.4768   53.6782   53.8800   54.0822
+
+  Columns 1033 through 1044
+
+   54.2848   54.4878   54.6912   54.8950   55.0992   55.3038   55.5088   55.7142   55.9200   56.1262   56.3328   56.5398
+
+  Columns 1045 through 1056
+
+   56.7472   56.9550   57.1632   57.3718   57.5808   57.7902   58.0000   58.2102   58.4208   58.6318   58.8432   59.0550
+
+  Columns 1057 through 1068
+
+   59.2672   59.4798   59.6928   59.9062   60.1200   60.3342   60.5488   60.7638   60.9792   61.1950   61.4112   61.6278
+
+  Columns 1069 through 1080
+
+   61.8448   62.0622   62.2800   62.4982   62.7168   62.9358   63.1552   63.3750   63.5952   63.8158   64.0368   64.2582
+
+  Columns 1081 through 1092
+
+   64.4800   64.7022   64.9248   65.1478   65.3712   65.5950   65.8192   66.0438   66.2688   66.4942   66.7200   66.9462
+
+  Columns 1093 through 1104
+
+   67.1728   67.3998   67.6272   67.8550   68.0832   68.3118   68.5408   68.7702   69.0000   69.2302   69.4608   69.6918
+
+  Columns 1105 through 1116
+
+   69.9232   70.1550   70.3872   70.6198   70.8528   71.0862   71.3200   71.5542   71.7888   72.0238   72.2592   72.4950
+
+  Columns 1117 through 1128
+
+   72.7312   72.9678   73.2048   73.4422   73.6800   73.9182   74.1568   74.3958   74.6352   74.8750   75.1152   75.3558
+
+  Columns 1129 through 1140
+
+   75.5968   75.8382   76.0800   76.3222   76.5648   76.8078   77.0512   77.2950   77.5392   77.7838   78.0288   78.2742
+
+  Columns 1141 through 1152
+
+   78.5200   78.7662   79.0128   79.2598   79.5072   79.7550   80.0032   80.2518   80.5008   80.7502   81.0000   81.2502
+
+  Columns 1153 through 1164
+
+   81.5008   81.7518   82.0032   82.2550   82.5072   82.7598   83.0128   83.2662   83.5200   83.7742   84.0288   84.2838
+
+  Columns 1165 through 1176
+
+   84.5392   84.7950   85.0512   85.3078   85.5648   85.8222   86.0800   86.3382   86.5968   86.8558   87.1152   87.3750
+
+  Columns 1177 through 1188
+
+   87.6352   87.8958   88.1568   88.4182   88.6800   88.9422   89.2048   89.4678   89.7312   89.9950   90.2592   90.5238
+
+  Columns 1189 through 1200
+
+   90.7888   91.0542   91.3200   91.5862   91.8528   92.1198   92.3872   92.6550   92.9232   93.1918   93.4608   93.7302
+
+  Column 1201
+
+   94.0000
+
+>> plot (x2,y2)
+>> plot(x2,y2)
+>> %kā uzzīmēt vairākus grafikus
+>> plot (x,y,x2,y2)
+>> %kā mainīt līnijas izskatu
+>> plot (x,y,'o')
+>> plot (x,y,'g')
+>> plot (x,y,'--')
+>> plot (x,y,'--go')
+>> help plot 
+ plot   Linear plot. 
+    plot(X,Y) plots vector Y versus vector X. If X or Y is a matrix,
+    then the vector is plotted versus the rows or columns of the matrix,
+    whichever line up.  If X is a scalar and Y is a vector, disconnected
+    line objects are created and plotted as discrete points vertically at
+    X.
+ 
+    plot(Y) plots the columns of Y versus their index.
+    If Y is complex, plot(Y) is equivalent to plot(real(Y),imag(Y)).
+    In all other uses of plot, the imaginary part is ignored.
+ 
+    Various line types, plot symbols and colors may be obtained with
+    plot(X,Y,S) where S is a character string made from one element
+    from any or all the following 3 columns:
+ 
+           b     blue          .     point              -     solid
+           g     green         o     circle             :     dotted
+           r     red           x     x-mark             -.    dashdot 
+           c     cyan          +     plus               --    dashed   
+           m     magenta       *     star             (none)  no line
+           y     yellow        s     square
+           k     black         d     diamond
+           w     white         v     triangle (down)
+                               ^     triangle (up)
+                               <     triangle (left)
+                               >     triangle (right)
+                               p     pentagram
+                               h     hexagram
+                          
+    For example, plot(X,Y,'c+:') plots a cyan dotted line with a plus 
+    at each data point; plot(X,Y,'bd') plots blue diamond at each data 
+    point but does not draw any line.
+ 
+    plot(X1,Y1,S1,X2,Y2,S2,X3,Y3,S3,...) combines the plots defined by
+    the (X,Y,S) triples, where the X's and Y's are vectors or matrices 
+    and the S's are strings.  
+ 
+    For example, plot(X,Y,'y-',X,Y,'go') plots the data twice, with a
+    solid yellow line interpolating green circles at the data points.
+ 
+    The plot command, if no color is specified, makes automatic use of
+    the colors specified by the axes ColorOrder property.  By default,
+    plot cycles through the colors in the ColorOrder property.  For
+    monochrome systems, plot cycles over the axes LineStyleOrder property.
+ 
+    Note that RGB colors in the ColorOrder property may differ from
+    similarly-named colors in the (X,Y,S) triples.  For example, the 
+    second axes ColorOrder property is medium green with RGB [0 .5 0],
+    while plot(X,Y,'g') plots a green line with RGB [0 1 0].
+ 
+    If you do not specify a marker type, plot uses no marker. 
+    If you do not specify a line style, plot uses a solid line.
+ 
+    plot(AX,...) plots into the axes with handle AX.
+ 
+    plot returns a column vector of handles to lineseries objects, one
+    handle per plotted line. 
+ 
+    The X,Y pairs, or X,Y,S triples, can be followed by 
+    parameter/value pairs to specify additional properties 
+    of the lines. For example, plot(X,Y,'LineWidth',2,'Color',[.6 0 0]) 
+    will create a plot with a dark red line width of 2 points.
+ 
+    Example
+       x = -pi:pi/10:pi;
+       y = tan(sin(x)) - sin(tan(x));
+       plot(x,y,'--rs','LineWidth',2,...
+                       'MarkerEdgeColor','k',...
+                       'MarkerFaceColor','g',...
+                       'MarkerSize',10)
+ 
+    See also plottools, semilogx, semilogy, loglog, plotyy, plot3, grid,
+    title, xlabel, ylabel, axis, axes, hold, legend, subplot, scatter.
+
+    Reference page for plot
+    Other functions named plot
+
+>> plot (x,y,'o'x2,y2,'r')
+ plot (x,y,'o'x2,y2,'r')
+              ↑
+Error: Invalid expression. Check for missing multiplication operator, missing or unbalanced delimiters, or other
+syntax error. To construct matrices, use brackets instead of parentheses.
+ 
+>> plot (x,y,'o',x2,y2,'r')
+>> stem(x,y)
+>> stairs(x,y)
+>> %grafika īpašību maiņa
+>> mans_grafiks(x,y)
+>> mans_grafiks(x2,y2)
+>> close all
+>> %kā zīmēt vairākus grafikus
+>> stairs(x,y)
+>> hold on
+>> plot (x,y,'--go')
+>> hold off
+>> stem(x,y)
+>> %zīmēsim Lisažu figūras
+>> 
+>> 
+>> 
+>> 
+>> 
+>> 
+>> 
+>> 
+>> 
+>> 
+>> 
+>> 
+>> 
+>> %tālāko kodu rakstīsim Editorā
+>> edit
+>> help lisazu
+  Skripts kas uzzīmē Lisažu figūras
+  27.02.2020
+
+>> lisazu
+>> lisazu
+
+f2 =
+
+     6
+
+>> lisazu_fun(3,5)
+
+f2 =
+
+     6
+
+>> lisazu_fun(3,5)
+>> lisazu_fun_anim(6,9,69)
+Error using lisazu_fun_anim
+Too many input arguments.
+ 
+>> lisazu_fun_anim(6,9.69)
+>> 
