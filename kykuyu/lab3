@@ -1,0 +1,316 @@
+mkdir lab2
+>> cd lab2
+>> %%ievads simboliskaja matematika\
+>> diary lab2_diary.m
+>> syms a11 a12 a21 a22 b11 b12 b21 b22
+>> A = [a11 a12 ; a21 a22];
+>> B = [b11 b12 ; b21 b22];
+>> C = A*B
+ 
+C =
+ 
+[ a11*b11 + a12*b21, a11*b12 + a12*b22]
+[ a21*b11 + a22*b21, a21*b12 + a22*b22]
+ 
+>> D = A.*B
+ 
+D =
+ 
+[ a11*b11, a12*b12]
+[ a21*b21, a22*b22]
+ 
+>> %kā definēt simbolisko mainīgo
+>> % definēsim x y kā simboliskos mainīgos
+>> % izmantojot funkciju "sym"
+>> x = sym('x');
+>> y = sym('y');
+>> % atradīsim kv. sakni no x^2
+>> y = x^2;
+>> 
+>> z = sqrt(y)
+ 
+z =
+ 
+(x^2)^(1/2)
+ 
+>> z =
+ z =
+    ↑
+Error: Invalid expression. Check for missing or extra characters.
+ 
+>> x = sym('x','positive');
+>> y = x^2
+ 
+y =
+ 
+x^2
+ 
+>> z = sqrt(y)
+ 
+z =
+ 
+x
+ 
+>> z
+ 
+z =
+ 
+x
+ 
+>> %  kā de3finēt simbolisko mainīgo - 2
+>> syms x y
+>> % šajā rindiņā esam definējuši x,y kā simboliskus mainīgos
+>> syms a11 a12 a21 a22
+>> A = [a11 a12 ; a21 a22];
+>> A'
+ 
+ans =
+ 
+[ conj(a11), conj(a21)]
+[ conj(a12), conj(a22)]
+ 
+>> % pateiksim ka matricas elementi ir reali skaitli
+>> syms a11 a12 a21 a22
+>> A = [a11 a12 ; a21 a22];
+>> A'
+ 
+ans =
+ 
+[ conj(a11), conj(a21)]
+[ conj(a12), conj(a22)]
+ 
+>> syms a11 a12 a21 a22 real
+>> A = [a11 a12 ; a21 a22];
+>> A'
+ 
+ans =
+ 
+[ a11, a21]
+[ a12, a22]
+ 
+>> %  kā de3finēt simbolisko mainīgo - 3
+>> A = sym('a',[2 3])
+ 
+A =
+ 
+[ a1_1, a1_2, a1_3]
+[ a2_1, a2_2, a2_3]
+ 
+>> A = sym('a%d%d',[2 3])
+ 
+A =
+ 
+[ a11, a12, a13]
+[ a21, a22, a23]
+ 
+>> % atvasināšana
+>> syms x
+>> y = x^2
+ 
+y =
+ 
+x^2
+ 
+>> % atvasināšanu veic ar funkciju - diff
+>> diff(y)
+ 
+ans =
+ 
+2*x
+ 
+>> diff(x^2)
+ 
+ans =
+ 
+2*x
+ 
+>> % Parciālatvasinājums
+>> syms x y
+>> z = 3*x^5+7*y^6;
+>> diff(z,x)
+ 
+ans =
+ 
+15*x^4
+ 
+>> diff(z,y)
+ 
+ans =
+ 
+42*y^5
+ 
+>> % integrēšana
+>> syms x
+>> y = x^3;
+>> int(y)
+ 
+ans =
+ 
+x^4/4
+ 
+>> syms x
+>> int(x,x,0,3)
+ 
+ans =
+ 
+9/2
+ 
+>> double(int(x,x,0,3))
+
+ans =
+
+    4.5000
+
+>> %atbilde nav skaitlis, bet ir simb. mainigais (bet to var pārveidot ar double)
+>> int(x^2,x,-3,3)
+ 
+ans =
+ 
+18
+ 
+>> % robežas
+>> syms x
+>> limit(1/(x-1),x,1,'left')
+ 
+ans =
+ 
+-Inf
+ 
+>> % izteiksme 1/(x-1), ja x tiecas uz 1
+>> % no kreisās puses
+>> limit(1/(x-1),x,1,'right')
+ 
+ans =
+ 
+Inf
+ 
+>> % vienādojumu risināšana
+>> syms x
+>> % risināsim vienādojumu x^2-7x+12=0(saknēm jābūt 3, 4)
+>> solve(x^2-7x+12==0,x)
+ solve(x^2-7x+12==0,x)
+            ↑
+Error: Invalid expression. Check for missing multiplication operator, missing or unbalanced delimiters, or
+other syntax error. To construct matrices, use brackets instead of parentheses.
+ 
+Did you mean:
+>> solve(x^2 - 7*x + 12==0,x)
+ 
+ans =
+ 
+ 3
+ 4
+ 
+>> % vienādojumu sistēmu risināšana
+>> syms x y z
+>> atb = solve(x+y+z==10,x-y+z==4,x+y-z==0)
+
+atb = 
+
+  struct with fields:
+
+    x: [1×1 sym]
+    y: [1×1 sym]
+    z: [1×1 sym]
+
+>> atb.x
+ 
+ans =
+ 
+2
+ 
+>> atb.y
+ 
+ans =
+ 
+3
+ 
+>> atb.z
+ 
+ans =
+ 
+5
+ 
+>> % simboliskie mainīgie
+>> % simboliskas konstantes
+>> a = vpa(2)
+ 
+a =
+ 
+2.0
+ 
+>> b = vpa(pi)
+ 
+b =
+ 
+3.1415926535897932384626433832795
+ 
+>> c = vpa(sqrt(2))
+ 
+c =
+ 
+1.4142135623730950488016887242097
+ 
+>> % zīmju skaita maiņa
+>> digit
+Undefined function or variable 'digit'.
+ 
+Did you mean:
+>> digits
+ 
+Digits = 32
+ 
+>> digits(100)
+>> a = vpa(pi)
+ 
+a =
+ 
+3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117068
+ 
+>> % vpa = variable precision arithmetics
+>> % rezultāta "skaistā" attēlošana
+>> y = ((x-4)*(x-5)/(x-1)*(x-2))
+ 
+y =
+ 
+((x - 2)*(x - 4)*(x - 5))/(x - 1)
+ 
+>> pretty(y)
+(x - 2) (x - 4) (x - 5)
+-----------------------
+         x - 1
+
+>> y = ((x-4)*(x-5))/((x-1)*(x-2))
+ 
+y =
+ 
+((x - 4)*(x - 5))/((x - 1)*(x - 2))
+ 
+>> pretty(y)
+(x - 4) (x - 5)
+---------------
+(x - 1) (x - 2)
+
+>> % uzdevums: atrast atvasinājumu, un uzzīmēt to ar funkciju plot
+>> % risinājums:
+>> % 1.definēsim simb. mainīgos
+>> syms x
+>> y = ((x-4)*(x-5))/((x-1)*(x-2))
+ 
+y =
+ 
+((x - 4)*(x - 5))/((x - 1)*(x - 2))
+ 
+>> y_atv = diff(y)
+ 
+y_atv =
+ 
+(x - 4)/((x - 1)*(x - 2)) + (x - 5)/((x - 1)*(x - 2)) - ((x - 4)*(x - 5))/((x - 1)*(x - 2)^2) - ((x - 4)*(x - 5))/((x - 1)^2*(x - 2))
+ 
+>> y_atv = simplify(diff(y))
+ 
+y_atv =
+ 
+(6*(x^2 - 6*x + 7))/(x^2 - 3*x + 2)^2
+ 
+>> 
