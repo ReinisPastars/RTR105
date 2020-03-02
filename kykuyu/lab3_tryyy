@@ -1,0 +1,59 @@
+function y = lab3_tryyy(t)
+if nargin == 0 % nargin - ieejas argumentu skaits
+    t = 0:0.01:7.5;
+end
+%t = 0:0.01:7.5; % kopīgais t
+%t_const = 0:0.01:1.5;
+t_const_f = (t>=0)&(t<1.5);
+t_const = t(t_const_f);
+
+%t_sin = 3.5:0.01:5;
+t_sin_f = (t>=3.5)&(t<5);
+t_sin = t(t_sin_f);
+
+%t_zero = 5:0.01:7;
+t_zero_f = (t>=5)&(t<7);
+t_zero = t(t_zero_f);
+
+%t_noise = 1.5:0.01:3.5;
+t_noise_f = (t>=1.5)&(t<3.5);
+t_noise = t(t_noise_f);
+
+t_saw = 7:0.01:7.5;
+t_saw_f = (t>=7)&(t<=7.5);
+t_saw = t(t_saw_f);
+%% const
+y_const = -2+zeros(size(t_const));
+%plot(t_const,y_const)
+%hold on
+%% sinusoida
+A0 = 0; A = -2;
+T = (5-3.5)/1.5;
+f = 1/T;
+delay = 3.5;
+y_sin = A0+A*sin(2*pi*f*(t_sin-delay));
+%plot(t_sin,y_sin)
+%axis([0 8 -2.5 2.5])
+%hold on
+%% nulles signals
+y_zero = zeros(size(t_zero));
+%plot(t_zero,y_zero)
+%hold on
+%% trokšņa signāls
+y_noise = 2*rand(size(t_noise))-1;
+%plot(t_noise,y_noise)
+%hold on
+%% slīpne
+k = (0.125-(-0.125))/(7-7.5);
+delay = 7.25;
+y_saw = k*(t_saw-delay);
+%plot(t_saw,y_saw)
+%hold on
+%% apvienošana
+t = [t_const,t_noise,t_sin,t_zero,t_saw];
+y = [y_const,y_noise,y_sin,y_zero,y_saw];
+if nargout == 0
+    plot(t,y)
+    y=[];
+end
+%plot(t,y)
