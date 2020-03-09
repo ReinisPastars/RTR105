@@ -1,0 +1,243 @@
+% Daudzkontūru shēmas simulācija
+>> mkdir lab4.m
+>> mkdir lab4
+>> cd lab4
+>> % Dots
+>> R1=1; R2=2; R3=3; R4=4; R5=5; R6=6; R7=7;
+>> E1=1; E2=2; E3=3;
+>> R = [R1=R2=R3   -R2   0;
+ R = [R1=R2=R3   -R2   0;
+        ↑
+Error: Incorrect use of '=' operator. To assign a value to a variable, use '='. To compare values for equality,
+use '=='.
+ 
+>> R = [R1+R2+R3   -R2   0; 
+        -R2      R2+R4+R5;
+]
+Error using vertcat
+Dimensions of arrays being concatenated are not consistent.
+ 
+>> R = [R1+R2+R3   -R2   0;
+-R2      R2+R4+R5    -R5;
+0    -R5    R7+R6+R7]
+
+R =
+
+     6    -2     0
+    -2    11    -5
+     0    -5    20
+
+>> E = [E1 -E2 -E3]'
+
+E =
+
+     1
+    -2
+    -3
+
+>> %% VIENĀDOJUMS IR UZDOTS ŠĀDI:
+>> %R*Ik = E
+>> % atrisināt var ar gausa izslēgšanas metodi, kas ir "\"
+>> Ik = R\E
+
+Ik =
+
+    0.0780
+   -0.2661
+   -0.2165
+
+>> %esam atraduši 3 kontūrstrāvas
+>> %% ir jāatrod Ur2-?
+>> %% ir jāatrod Pr2-?
+>> Ir2=Ik(1)-Ik(2)
+
+Ir2 =
+
+    0.3440
+
+>> Ur2 = Ir2* R2
+
+Ur2 =
+
+    0.6881
+
+>> R = [R1+R2+R3   -R2   0;
+-R2      R2+R4+R5    -R5;
+0    -R5    R7+R6+R7]
+
+R =
+
+     6    -2     0
+    -2    11    -5
+     0    -5    20
+
+>> R = [R1+R2+R3   -R2   0;
+-R2      R2+R4+R5    -R5;
+0    -R5    R5+R6+R7]
+
+R =
+
+     6    -2     0
+    -2    11    -5
+     0    -5    18
+
+>> Ir2=Ik(1)-Ik(2)
+
+Ir2 =
+
+    0.3440
+
+>> Ur2 = Ir2* R2
+
+Ur2 =
+
+    0.6881
+
+>> Ik = R\E
+
+Ik =
+
+    0.0735
+   -0.2795
+   -0.2443
+
+>> Ir2=Ik(1)-Ik(2)
+
+Ir2 =
+
+    0.3530
+
+>> Ur2 = Ir2* R2
+
+Ur2 =
+
+    0.7060
+
+>> Pr2 = Ir2*Ur2
+
+Pr2 =
+
+    0.2492
+
+>> %% Pieņemsim ka E1,E2,E3 vērtības ir citas
+>> % būs 3 laika momenti, katrā būs trīs vērtības
+>> E1=[1 -1 0;
+E1=[1 -1 0];
+ E1=[1 -1 0];
+   ↑
+Error: Incorrect use of '=' operator. To assign a value to a variable, use '='. To compare values for
+equality, use '=='.
+ 
+>> E1 = [ 1 -1 0 ];
+>> E2 = [ 2 -2 0 ];
+>> E3 = [ 3 -3 0 ];
+>> E = [E1; -E2; -E3]
+
+E =
+
+     1    -1     0
+    -2     2     0
+    -3     3     0
+
+>> %atkal rēķina vienādojuma sistēmu
+>> Ik = R\E
+
+Ik =
+
+    0.0735   -0.0735         0
+   -0.2795    0.2795         0
+   -0.2443    0.2443         0
+
+>> % 1.kontūrstrāva ir pirmajā rindā utt
+>> %% ir jāatrod Ir3 Ur3 Pr3
+>> Ir3 = Ik(1,:)
+
+Ir3 =
+
+    0.0735   -0.0735         0
+
+>> Ur3 = Ir3*R3
+
+Ur3 =
+
+    0.2205   -0.2205         0
+
+>> Pr3 = Ir3.*Ur3
+
+Pr3 =
+
+    0.0162    0.0162         0
+
+>> %% vēl viens piemērs 
+>> % laika mainīgie signāli 
+>> t = 0:0.01:1;
+>> E1 = sin(2*pi*5*t);
+>> %E2 = 2 konstante
+>> E2 = 2
+
+E2 =
+
+     2
+
+>> E2 = 2+zeros(size(t));
+>> E3 = 0.5*cos(2*pi*7*t)
+>> E = [E1 -E2 -E3];
+>> % rēķināsim 101 vienādumu sistēma
+>> Ik = R\E;
+Error using  \ 
+Matrix dimensions must agree.
+ 
+>> E = [E1; -E2; -E3;];
+>> Ik = R\E;
+>> % Ir jāuzzīmē Ur5,Pr5
+>> Ir5 = Ik(3,:)-Ik(2,:);
+>> Ur5 = Ir5*R5;
+>> Pr5 = Ir5.*Ur5;
+>> %% uzzīmēsim
+>> plot(t,Ur5,t,Pr5);
+>> legend('U{R5}(t)','P{R5}(t)')
+>> legend('U_{R5}(t)','P_{R5}(t)')
+>> xlabel('t,s')
+>> grid
+>> % Kā var uzzīmēt divus dažādus grafikus lai būtu divas neatkarīgas y-asis
+>> plotyy(t,Ur5,t,Pr5)
+>> h = plotyy(t,Ur5,t,Pr5)
+
+h = 
+
+  1×2 Axes array:
+
+    Axes    Axes
+
+>> ylabel(h(1), 'spriegums,V')
+>> ylabel(h(2), 'jauda,W')
+>> legend('Ur5(t)','Pr5(t)')
+>> xlabel('t,s')
+>> grid
+>> figure(2)
+>> yyaxis left
+>> plot(t,Ur5)
+>> ylabel('spriegums,V')
+>> xlabel('t,s')
+>> yyaxis right
+>> plot(t,Pr5)
+>> ylabel('jauda,W')
+>> legend('U_{R5}(t)','P_{R5}(t)')
+>> % kā pārbaudīt rezultātus?
+>> % lai pārbaudītu rezultātus, ja aprēķins bija veikts ar KSN, pārbauda Kirhofa sprieguma likumu visiem kontūriem,ja aprēķins bija veikts ar MSM, pārbauda ar Kirhofa strāvas likumu visiem kontūriem
+>> % Pārbaudīsim Kirhofa sprieguma likumu 3. kontūram
+>> % Ur5+Ur6+Ur7== -E3
+>> % pārvietosim visu uz vienu pusi
+>> % Ur5+Ur6+Ur7+E3==0
+>> % piešķirsim kreiso pusi mainīgajam Utst = Ur5+Ur6+Ur7+E3;
+>> % uzzīmēsim, būtu jābūt "0"
+>> Ur6 = Ik(3,:*R6;
+ Ur6 = Ik(3,:*R6;
+             ↑
+Error: Invalid use of operator.
+ 
+>> Ur6 = Ik(3,:)*R6;
+>> Ur7 = Ik(3,:)*R7;
+>> Utst = Ur5+Ur6+Ur7+E3;
+>> figure(3),plot(t,Utst),title('pārbaude')
+>> 
