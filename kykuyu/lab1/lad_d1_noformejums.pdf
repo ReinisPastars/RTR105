@@ -26,7 +26,7 @@
 %
 %grid minor
 %
-%%Izmantotais sâkuma grafiks
+%%Izmantotais sakuma grafiks
 %
 %<<../grafiks.png>>
 %
@@ -34,7 +34,7 @@
 %
 %<<..grafiks_ginput.png>>
 %
-%%Secinâjumi
+%%Secinaâjumi
 %
 %Saja darba iemacijos "imread"funkciju un "ginput" funkciju, ar kuru
 %nolasiju vertibas no dota grafika attela. Ar "ginput" nolasitos datus
