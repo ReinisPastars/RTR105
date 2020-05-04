@@ -1,0 +1,42 @@
+%% 1.laboratorijas darbs (ðis kods ir tieði priekð publish)
+%% Mçrîjumu datu apstrâde
+%% Mçríi:
+% * Iemâcîties apstrâdât mçrîjumu datus
+% * Iemâcîties lietot polyfit, polyval funkcijas
+% * Iemâcîties veidot matlab atskaites izmantojot "publish"
+%% Darba programma:
+%
+%A = imread('grafiks.png');
+%
+%figure(1),image(A)
+%
+%figure(1),image([0 100],[10 0],A)
+%
+%set(gca,'Ydir','normal')
+%
+%[x,y] = ginput(30)
+%
+%p = polyfit(x,y,5)
+%
+%xx = min(x):1:max(x);
+%
+%yy = polyval(p,xx);
+%
+%plot(x,y,'o',xx,yy);
+%
+%grid minor
+%
+%%Izmantotais sâkuma grafiks
+%
+%<<../grafiks.png>>
+%
+%%Ar polyfit, polyfind izveidotais grafiks
+%
+%<<..grafiks_ginput.png>>
+%
+%%Secinâjumi
+%
+%Ðajâ darbâ iemâcîjos "imread" funkciju, un "ginput" funkciju, ar kuru
+%nolasîju vçrtîbas no dotâ grafika attçla. Ar "ginput" nolasîtos datus
+%var pârvçrst grafikâ, izmantojot "polyfit" un "polyval" funkcijas.
+%Apguvu publish funkciju un iemâcîjos pareizi noformçt darbu.
